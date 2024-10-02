@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model rawData {
+  id String @id @default(uuid())
+  key String?
+  expected_go_live String?
+  assignee String?
+  summary String?
+  reporter String?
+  status String?
+  created_date String?
+  updated_date String?
+  issues_type String?
+  brand String?
+  store String?
+  country String?
+  organization String?
+  days_since_last_comment String?
+  request_type String?
+  time_to_first_response String?
+  date_of_first_response String?
+  time_to_resolution String?
+  time_to_close_after_resolution String?
+}
+
+model backUpRawData {
+  id String @id @default(uuid())
+  key String?
+  expected_go_live String?
+  assignee String?
+  summary String?
+  reporter String?
+  status String?
+  created_date String?
+  updated_date String?
+  issues_type String?
+  brand String?
+  store String?
+  country String?
+  organization String?
+  days_since_last_comment String?
+  request_type String?
+  time_to_first_response String?
+  date_of_first_response String?
+  time_to_resolution String?
+  time_to_close_after_resolution String?
+  version String
+}
